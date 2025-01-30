@@ -13,6 +13,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICategoryDal, EFCategoryDal>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 
+builder.Services.AddScoped<IProductDal, EFProductDal>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
 builder.Services.AddScoped<IOrderDetailDal, EFOrderDetailDal>();
 builder.Services.AddScoped<IOrderDetailService, OrderDeatilService>();
 
@@ -49,6 +52,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Product}/{action=Index}/{id?}");
 
 app.Run();
