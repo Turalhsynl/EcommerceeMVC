@@ -18,12 +18,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Husey_vw08\Desktop\EcommerceeMVC\ECommerce.WebUI
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Husey_vw08/Desktop/EcommerceeMVC/ECommerce.WebUI/Views/Cart/Complete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDb21wbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Husey_vw08/Desktop/EcommerceeMVC/ECommerce.WebUI/Views/Cart/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Husey_vw08/Desktop/EcommerceeMVC/ECommerce.WebUI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Husey_vw08/Desktop/EcommerceeMVC/ECommerce.WebUI/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Husey_vw08/Desktop/EcommerceeMVC/ECommerce.WebUI/Views/Product/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Husey_vw08/Desktop/EcommerceeMVC/ECommerce.WebUI/Views/Product/Index.cshtml]

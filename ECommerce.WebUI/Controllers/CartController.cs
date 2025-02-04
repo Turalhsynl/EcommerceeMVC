@@ -1,4 +1,5 @@
 ﻿using ECommerce.Application.Abstract;
+using ECommerce.Domain.Models;
 using ECommerce.WebUI.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,14 +19,47 @@ public class CartController(IProductService productService, ICartSessionService 
         _cartService.AddToCart(cart, productToBeAdded);
         _cartSessionService.SetCart(cart);
 
-        if (TempData.ContainsKey("message"))
-        {
-            TempData["message"] = String.Format($"Your product, {productToBeAdded.ProductName} was added successfully to cart!");
-        }
-        else
-        {
-            TempData.Add("message", String.Format($"Your product, {productToBeAdded.ProductName} was added successfully to cart!"));
-        }
+
+        TempData["message"] = String.Format("Your product, {0} was added successfully to cart!", productToBeAdded.ProductName);
         return RedirectToAction("Index", "Product");
+    }
+
+    [HttpGet]
+    public ActionResult List()
+    {
+        var cart = _cartSessionService.GetCart();
+        var model = new CartListViewModel()
+        {
+            Cart = cart
+        };
+        return View(model);
+    }
+
+    public ActionResult Remove(int productId)
+    {
+        var cart = _cartSessionService.GetCart();
+        _cartService.RemoveFromCart(cart, productId);
+        _cartSessionService.SetCart(cart);
+        TempData.Add("message", "Your product deleted succesfully from cart");
+        return RedirectToAction("List");
+    }
+
+    [HttpGet]
+    public IActionResult Complete()
+    {
+        var shippingDetailViewModel = new ShippingDetailsViewModel
+        {
+            ShippingDetails = new ShippingDetails() { Address = string.Empty, Age = string.Empty, City = string.Empty, Email = string.Empty, Firstname = string.Empty, Lastname = string.Empty }
+        };
+        return View(shippingDetailViewModel);
+    }
+
+    [HttpPost]
+    public IActionResult Complete(ShippingDetailsViewModel model)
+    {
+        if(!ModelState.IsValid)
+            return View();
+        TempData.Add("message",String.Format("Thank you yoldas {0}, your order in progress", model.ShippingDetails.Firstname));
+        return View();
     }
 }
